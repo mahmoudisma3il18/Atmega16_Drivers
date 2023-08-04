@@ -85,5 +85,3 @@ Contributions to this repository are welcome! If you find a bug, want to add mor
 We would like to express our gratitude to the open-source community and everyone who has contributed to this project. Your support and feedback are invaluable in making this repository better and more useful for others. Thank you!
 
 ---
-
-**Note:** Make sure to replace the placeholders like "your-username" in the clone URL with your actual GitHub username. Additionally, you may want to add more sections to the readme if you plan to cover additional topics like examples, troubleshooting, or a FAQ section.
