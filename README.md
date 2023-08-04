@@ -13,7 +13,6 @@ Welcome to the Atmega16 Drivers repository! This repository contains a collectio
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ## Introduction
@@ -57,14 +56,8 @@ To start using the Atmega16 drivers in your project, you have two options:
 3. Use the following command to clone the repository:
 
    ```
-   git clone https://github.com/your-username/atmega16-drivers.git
+   git clone https://github.com/mahmoudisma3il18/Atmega16_Drivers.git
    ```
-
-#### Option 2: Manual Download
-
-1. Click on the "Code" button in the repository.
-2. Select "Download ZIP."
-3. Extract the ZIP file to your project's root directory.
 
 ## Usage
 
