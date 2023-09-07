@@ -34,7 +34,15 @@
 
 /*----------------------------------- Typedefs --------------------------*/
 /* Device address when it acts as slave */
-typedef uint8_t  I2C_Slave_Address;
+#define  I2C_MASTER_Slave_Address        0x01
+
+
+/*
+Specifies whether the general call address is enabled or disabled. 
+This parameter can be set to either
+I2C_ENGC_Enable  0x0(Disable) or 0x01(Enable).
+*/
+#define  I2C_ENGC_Enable                 0x00
 
 /*
 Specifies the clock frequency of the I2C
@@ -44,35 +52,11 @@ macro.
 */
 typedef uint32_t I2C_SCL_Freq;
 
-/*
-Specifies whether the general call
-address is enabled or disabled. This
-parameter can be set to either
-I2C_ENGC_Enable or
-I2C_ENGC_Disable.
-*/
-typedef enum {
-	I2C_ENGC_Disable,
-	I2C_ENGC_Enable
-}I2C_General_Call_Address_Detection;
-
-/*
-Specifies whether the I2C interface will
-acknowledge or not the received data
-byte. This parameter can be set to either
-I2C_Ack_Enable or I2C_Ack_Disable.
-*/
-	
-typedef struct {
-	I2C_SCL_Freq       scl_Freq;
-	I2C_Slave_Address  slave_Address;
-	I2C_General_Call_Address_Detection general_Call_Address_Detection;
-}I2C_config;	
 
 /*-------------------------------- Function Prototypes --------------------*/
 
 /* Initialize I2C */
-void I2C_init(I2C_config *i2c_config_ptr);
+void I2C_init(I2C_SCL_Freq scl_freq);
 
 /* Deinit I2C */
 void I2C_deinit(void);

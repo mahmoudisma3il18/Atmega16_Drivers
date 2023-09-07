@@ -8,14 +8,14 @@
 #include "I2C.h"
 
 /* Initialize I2C */
-void I2C_init(I2C_config  *i2c_config_ptr) {
+void I2C_init(I2C_SCL_Freq scl_freq) {
 	
 	/* 1. Set Frequency */
 	uint32_t twbrValue;
 	uint8_t twpsBits;
 
 	// Calculate the TWBR value
-	twbrValue = (F_CPU / (2 * i2c_config_ptr->scl_Freq)) - 8;
+	twbrValue = (F_CPU / (2 * scl_freq)) - 8;
 
 	// Determine the appropriate prescaler (TWPS) value
 	
@@ -43,10 +43,10 @@ void I2C_init(I2C_config  *i2c_config_ptr) {
 	TWSR = (TWSR & 0xFC) | twpsBits;
 	
 	/* 2. Set Slave Address */
-	TWAR |= ((i2c_config_ptr->slave_Address & 0x7F) << 1);
+	TWAR |= ((I2C_MASTER_Slave_Address & 0x7F) << 1);
 	
 	/* 3. General Call Address Detection */
-	TWAR |= (i2c_config_ptr->general_Call_Address_Detection & 0x1);
+	TWAR |= (I2C_ENGC_Enable & 0x1);
 	
 	/* 4. Enable I2C */
 	TWCR |= (1<<TWEN);
